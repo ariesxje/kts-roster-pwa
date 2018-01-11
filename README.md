@@ -1,4 +1,4 @@
-# Offer management tool
+# React boilerplate
 
 [![Build status](https://badge.buildkite.com/c667037d3f2152120b0eefc6bdef95e6b3c578503d93d090aa.svg)](https://buildkite.com/tabcorp/offer-management-tool)
 
@@ -47,5 +47,5 @@ Deployment of the application itself is done via the GoCD pipeline [redbookci/of
 
 ## Tools that shine
 
+- `ramda` pure functional library (highly recommended)
 - `date-fns` date and time related functions
-- `ramda` pure functional library
