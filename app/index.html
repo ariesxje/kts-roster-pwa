@@ -2,11 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#FF9800"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="manifest.json">
     <title>React boilerplate</title>
 </head>
 <body>
-
     <div id="root"></div>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyD8ouooIMTzvoh4yyOSg1p7NW9ILSOLu1k",
+        authDomain: "pwa-test-84b6d.firebaseapp.com",
+        databaseURL: "https://pwa-test-84b6d.firebaseio.com",
+        projectId: "pwa-test-84b6d",
+        storageBucket: "pwa-test-84b6d.appspot.com",
+        messagingSenderId: "80149981568"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+          }).catch(function(err) {
+            console.log(err)
+          });
+        });
+      } else {
+        console.log('service worker is not supported');
+      }
+    </script>
     <script type="text/javascript" src="configuration.js"></script>
 </body>
 </html>
